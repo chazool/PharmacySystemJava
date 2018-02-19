@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- This is comment Database connection settings  -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/pharmacysystem</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <!--  comment        <property name="hbm2ddl.auto">create</property> -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping class="Bean.CreateData"/>
+        <mapping class="Bean.Generic"/>
+        <mapping class="Bean.Item"/>
+        <mapping class="Bean.User"/>
+        <mapping class="Bean.GenericType"/>
+        <mapping class="Bean.Stock"/>
+        <mapping class="Bean.StockBatch"/>
+        <mapping class="Bean.ItemType"/>
+        
+
+        
+    </session-factory>
+
+</hibernate-configuration>
